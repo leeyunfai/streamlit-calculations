@@ -47,7 +47,7 @@ with st.form(key="data_editor_form"):
             "Column A": st.column_config.NumberColumn("Value A", required=True),
             "Column B": st.column_config.NumberColumn("Value B", required=True),
             "Column C": st.column_config.NumberColumn("A * B", disabled=True, format="%.2f"),
-            "Column D": st.column_config.NumberColumn("B as % of A", disabled=True, format="%.2f%%")
+            "Column D": st.column_config.NumberColumn("B / A", disabled=True, format="%.2f")
         }
     )
 
@@ -81,4 +81,5 @@ st.markdown("""
     * It runs the `update_calculations` function on this fresh data.
     * It saves the final, calculated result back into `st.session_state.df`.
 5.  **Clean Refresh**: `st.rerun()` is called to force an immediate refresh of the page, ensuring the data table you see is perfectly in sync with the saved state. This prevents any UI weirdness and guarantees your changes are applied and displayed.
+
 """)
